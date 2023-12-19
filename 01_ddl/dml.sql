@@ -51,7 +51,7 @@ UPDATE user
 SET age = 60, balance = 0
 WHERE first_name = 'Alex';
 
--- countryrk NULL의 열들의 국적을 Korea로
+-- country가 NULL의 열들의 국적을 Korea로
 UPDATE user
 SET country = 'KOR'
 WHERE country is NULL;

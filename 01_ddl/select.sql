@@ -53,3 +53,32 @@ SELECT * FROM user WHERE first_name like 'A%';
 -- first_name이 A로 시작하는 사람들 중 이름이 4글자로 이루어진 사람들만 조회
 -- _ = 1개의 문자와 동일한 문자
 SELECT * FROM user WHERE first_name like 'A___';
+
+-- 전화번호가 '010-'으로 시작하지 않는 데이터를 조회하는 SQL
+SELECT * FROM user WHERE phone NOT LIKE '010%';
+
+-- 성에 '이 포함된
+SELECT * FROM user WHERE last_name like '%''%';
+
+-- 국적이 미국, 캐나다, 호주인 사람들만 조회하는 SQL
+SELECT * FROM user
+WHERE country = 'United States' or country =  'Canada' or country = 'Australia';
+
+-- IN 사용
+SELECT * FROM user
+WHERE country IN ('United Sates', 'Canada', 'Australia');
+
+-- BETWEEN 사용
+SELECT first_name, last_name, age
+FROM user
+WHERE age between 30 and 39;
+
+-- LIMIT
+SELECT id, first_name, last_name
+FROM user
+LIMIT 10;
+
+SELECT id, first_name, last_name
+FROM user
+WHERE age > 30
+LIMIT 50 OFFSET 50;
